@@ -6,15 +6,15 @@
 #    By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/17 13:48:12 by jalombar          #+#    #+#              #
-#    Updated: 2024/12/05 15:35:25 by jalombar         ###   ########.fr        #
+#    Updated: 2024/12/10 15:33:11 by jalombar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++   
 FLAGS = -Wall -Werror -Wextra -std=c++98
-SRCS = mapb.cpp
-HEADER = mapb.hpp
-NAME = mapb
+SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+HEADER = Zombie.hpp
+NAME = Zombie
 
 all: $(NAME)
 
