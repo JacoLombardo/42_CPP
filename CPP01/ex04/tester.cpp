@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 15:29:05 by jalombar          #+#    #+#             */
-/*   Updated: 2024/12/11 16:07:45 by jalombar         ###   ########.fr       */
+/*   Updated: 2024/12/11 16:25:00 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,22 @@
 int main(void)
 {
     std::cout << std::endl;
+    std::ofstream empty("testfile");
+    empty.close();
+
+    {
+        std::cout << "Testing with empty infile and valid s1 and s2:" << std::endl;
+        std::cout << "./Sed testfile bene diocane" << std::endl << std::endl;
+        std::system("./Sed testfile bene diocane");
+        std::cout << std::endl << std::endl;
+        std::remove("testfile");
+    }
+
     std::ofstream testfile("testfile");
     testfile << "ciao come stai bene" << std::endl;
     testfile << "dai molto bene o no?" << std::endl;
     testfile << "bene dai dai" << std::endl;
+    testfile.close();
 
     {
         std::cout << "Testing with existing infile and valid s1 and s2:" << std::endl;
@@ -30,6 +42,7 @@ int main(void)
         while (std::getline(infile, line))
             std::cout << line << std::endl;
         std::cout << std::endl << std::endl;
+        infile.close();
         std::remove("testfileBis");
     }
     
@@ -50,6 +63,7 @@ int main(void)
         while (std::getline(infile, line))
             std::cout << line << std::endl;
         std::cout << std::endl << std::endl;
+        infile.close();
         std::remove("testfileBis");
     }
     

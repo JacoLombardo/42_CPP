@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 11:50:59 by jalombar          #+#    #+#             */
-/*   Updated: 2024/12/11 15:49:00 by jalombar         ###   ########.fr       */
+/*   Updated: 2024/12/11 16:28:44 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,6 @@ void    ft_read_n_write(std::ofstream& outfile, std::string line, std::string s1
     outfile << std::endl;
 }
 
-/* const char *ft_get_outfile_name(std::string infile)
-{
-    std::string outfileName = infile + "Bis";
-    return (outfileName.c_str());
-} */
-
 const char* ft_get_outfile_name(const std::string infile) {
     std::string outfileName = infile + "Bis";
     char* result = new char[outfileName.length() + 1];
@@ -68,10 +62,14 @@ void    ft_sed(const char *filename, std::string s1, std::string s2)
     std::ofstream outfile(outfileName);
     std::string line;
     
+    bool isEmpty = true;
     while (std::getline(infile, line))
     {
+        isEmpty = false;
         ft_read_n_write(outfile, line, s1, s2);
     }
+    if (isEmpty)
+        std::cout << "Empty infile" << std::endl;
     infile.close();
     outfile.close();
     delete[] outfileName;
