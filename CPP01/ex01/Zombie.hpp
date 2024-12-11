@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 13:38:48 by jalombar          #+#    #+#             */
-/*   Updated: 2024/12/11 10:23:06 by jalombar         ###   ########.fr       */
+/*   Updated: 2024/12/11 10:24:04 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,7 @@ class Zombie
         {
             std::cout << "Zombie " << name << " destroyed." << std::endl;
         }
-        /* void setName(const std::string& zombieName) 
-        {
-            name = zombieName;
-        } */
-       void setName(const std::string zombieName)
+        void setName(const std::string zombieName)
         {
             name = zombieName;
         }
