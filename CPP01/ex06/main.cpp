@@ -6,26 +6,22 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 10:19:38 by jalombar          #+#    #+#             */
-/*   Updated: 2024/12/18 11:33:01 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/01/16 15:36:31 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main(void)
+int main(int argc, char **argv)
 {
-    Harl newHarl;
-    std::cout << "Filter for Debug: " << std::endl;
-    newHarl.filter("debug");
-    std::cout << std::endl << std::endl;
-    std::cout << "Filter for Info: " << std::endl;
-    newHarl.filter("info");
-    std::cout << std::endl << std::endl;
-    std::cout << "Filter for Warning: " << std::endl;
-    newHarl.filter("warning");
-    std::cout << std::endl << std::endl;
-    std::cout << "Filter for Error: " << std::endl;
-    newHarl.filter("error");
-    std::cout << std::endl << std::endl;
+    if (argc == 2)
+    {
+        Harl newHarl;
+        newHarl.filter(argv[1]);
+    }
+    else if (argc > 2)
+        std::cout << "Too many arguments" << std::endl;
+    else
+        std::cout << "Too few arguments" << std::endl;
     return (0);
 }

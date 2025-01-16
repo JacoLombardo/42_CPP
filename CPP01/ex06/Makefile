@@ -6,7 +6,7 @@
 #    By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/17 13:48:12 by jalombar          #+#    #+#              #
-#    Updated: 2024/12/18 11:20:43 by jalombar         ###   ########.fr        #
+#    Updated: 2025/01/16 15:37:31 by jalombar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,5 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
-	rm -f tester
 
 re: fclean all

@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 10:20:41 by jalombar          #+#    #+#             */
-/*   Updated: 2024/12/18 11:07:56 by jalombar         ###   ########.fr       */
+/*   Updated: 2024/12/18 11:21:14 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ class Harl
             std::map<std::string, void (Harl::*)()>::iterator it = functionMap.find(level);
             if (it != functionMap.end())
                 (this->*(it->second))();
-            else
-                std::cout << "Level " << level << " not found." << std::endl;
         }
 };
 
