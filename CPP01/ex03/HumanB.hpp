@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 10:45:20 by jalombar          #+#    #+#             */
-/*   Updated: 2024/12/11 11:38:33 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/01/28 11:56:28 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,8 @@ class HumanB
 
     public:
         HumanB(std::string name) : name(name) {}
-        void setWeapon(Weapon& newWeapon)
-        {
-            weapon = &newWeapon;
-        }
-        void attack()
-        {
-            std::cout << name << " attacks with their " << (*weapon).getType() << std::endl;
-        }
+        void setWeapon(Weapon& newWeapon);
+        void attack();
 };
 
 #endif
