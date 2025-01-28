@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 13:38:48 by jalombar          #+#    #+#             */
-/*   Updated: 2024/12/11 10:06:35 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/01/28 11:04:57 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,8 @@ class Zombie
     
     public:
         Zombie(std::string name) : name(name) {}
-        ~Zombie()
-        {
-            std::cout << "Zombie " << name << " destroyed." << std::endl;
-        }
-        void announce() const
-        {
-            std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-        }
+        ~Zombie();
+        void announce() const;
 };
 
 Zombie* newZombie(std::string name);
