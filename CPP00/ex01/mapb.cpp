@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 12:22:39 by jalombar          #+#    #+#             */
-/*   Updated: 2024/12/05 15:35:13 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/01/28 10:51:55 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ void ft_search(PhoneBook phonebook)
 
     i = 0;
     std::cout << std::endl;
+    if (!phonebook.contacts[0].firstName[0])
+        return ;
     while (i < 8)
     {
         if (phonebook.contacts[i].id != 0)
