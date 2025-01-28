@@ -6,7 +6,7 @@
 #    By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/17 13:48:12 by jalombar          #+#    #+#              #
-#    Updated: 2025/01/28 12:12:40 by jalombar         ###   ########.fr        #
+#    Updated: 2025/01/28 13:44:18 by jalombar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ FLAGS = -Wall -Werror -Wextra
 SRCS = main.cpp
 TESTER_SRCS = tester.cpp
 HEADER = Sed.hpp
-NAME = Sed
+NAME = sed
 
 all: $(NAME)
 
