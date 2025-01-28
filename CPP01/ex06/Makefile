@@ -6,14 +6,14 @@
 #    By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/17 13:48:12 by jalombar          #+#    #+#              #
-#    Updated: 2025/01/16 15:37:31 by jalombar         ###   ########.fr        #
+#    Updated: 2025/01/28 14:08:05 by jalombar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++   
 FLAGS = -Wall -Werror -Wextra
 98 = -std=c++98
-SRCS = main.cpp
+SRCS = main.cpp Harl.cpp
 HEADER = Harl.hpp
 NAME = harlFilter
 
