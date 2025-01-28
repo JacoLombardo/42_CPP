@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 12:11:52 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/17 14:03:36 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/01/28 16:02:12 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,3 +89,4 @@ std::ostream &operator<<(std::ostream &os, const Fixed &object)
     os << object.toFloat();
     return (os);
 }
+

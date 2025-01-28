@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 11:59:06 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/17 14:03:09 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/01/28 16:02:48 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ class Fixed
 
         /* toInt member function */
         int toInt(void) const;
+
+        /* CHECK IMPLEMENTATION WITHOUT FRIEND!!!!! */
 
         /* Overload the insertion (<<) operator */
         friend std::ostream &operator<<(std::ostream &os, const Fixed &f);
