@@ -6,7 +6,7 @@
 #    By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/17 13:48:12 by jalombar          #+#    #+#              #
-#    Updated: 2025/01/17 12:52:18 by jalombar         ###   ########.fr        #
+#    Updated: 2025/01/28 14:21:51 by jalombar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ FLAGS = -Wall -Werror -Wextra
 98 = -std=c++98
 SRCS = main.cpp
 HEADER = Fixed.hpp
-NAME = Fixed
+NAME = fixed
 
 all: $(NAME)
 
