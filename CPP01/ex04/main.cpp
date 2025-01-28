@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 11:50:59 by jalombar          #+#    #+#             */
-/*   Updated: 2024/12/11 16:28:44 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/01/28 12:10:32 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,9 @@ void    ft_read_n_write(std::ofstream& outfile, std::string line, std::string s1
     outfile << std::endl;
 }
 
-const char* ft_get_outfile_name(const std::string infile) {
-    std::string outfileName = infile + "Bis";
+const char* ft_get_outfile_name(const std::string infile)
+{
+    std::string outfileName = infile + ".replace";
     char* result = new char[outfileName.length() + 1];
     for (unsigned long i = 0; i < outfileName.length(); ++i) {
         result[i] = outfileName[i];
