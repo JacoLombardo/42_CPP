@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 12:11:52 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/29 10:46:59 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/01/29 12:36:44 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ Fixed::Fixed(const int value)
 {
 	std::cout << "Int constructor called" << std::endl;
 	number = value * (1 << fractionalBits);
-	std::cout << "Number: " << number << std::endl;
 }
 
 /* Float constructor */
