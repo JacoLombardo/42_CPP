@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 09:44:48 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/30 11:29:40 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/01/30 12:03:12 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,6 @@ void ClapTrap::beRepaired(unsigned int amount)
 void ClapTrap::status(void)
 {
 	std::cout << "ClapTrap " << name << " has " << hitPoints <<
-        " hit points," << energyPoints << " energy points and " <<
+        " hit points, " << energyPoints << " energy points and " <<
             attackDamage << " attack damage." << std::endl;
 }
