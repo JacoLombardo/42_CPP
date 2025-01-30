@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/30 09:46:36 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/30 10:28:14 by jalombar         ###   ########.fr       */
+/*   Created: 2025/01/17 12:37:40 by jalombar          #+#    #+#             */
+/*   Updated: 2025/01/30 11:44:48 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ClapTrap.cpp"
 
 int main(void)
 {
