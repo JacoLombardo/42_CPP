@@ -6,13 +6,14 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 10:14:46 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/30 12:02:09 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/01/31 10:18:29 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void)
 {
@@ -43,5 +44,14 @@ int	main(void)
 	FragTrap marco("Marco");
 	marco.status();
 	marco.highFivesGuys();
+
+	DiamondTrap dino("Dino");
+	dino.whoAmI();
+	dino.status();
+	dino.attack("Qualcuno");
+	dino.status();
+	dino.takeDamage(100);
+	dino.status();
+	
 	return (0);
 }

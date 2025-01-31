@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 12:05:37 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/30 15:14:28 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/01/31 10:16:29 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 {
   private:
     std::string name;
-    std::string clapTrapName;
-    using ScavTrap::
     
-
   public:
 	/* Default constructor */
 	DiamondTrap();
