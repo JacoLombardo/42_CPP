@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 11:53:23 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/30 12:02:40 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/01/31 09:55:22 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ void FragTrap::highFivesGuys()
 	if (hitPoints > 0)
 	{
 		std::cout << "FragTrap " << name <<
-            " requests a positive high five! ✋😃!" << std::endl;
+            " requests a positive high five! ✋😃" << std::endl;
 	}
 	else
 		std::cout << "FragTrap " << name <<
-            " is dead, so it cannot request a positive high five! ✋😃!"
+            " is dead, so it cannot request a positive high five!"
                 << std::endl;
 }
