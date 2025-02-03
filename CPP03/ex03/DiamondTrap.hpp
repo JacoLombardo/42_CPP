@@ -6,23 +6,23 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 12:05:37 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/31 10:16:29 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:48:45 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DIAMONDTRAP_HPP
-#define DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
 # include "ClapTrap.hpp"
-# include "ScavTrap.hpp"
 # include "FragTrap.hpp"
+# include "ScavTrap.hpp"
 # include <iostream>
 
 class DiamondTrap : public ScavTrap, public FragTrap
 {
   private:
-    std::string name;
-    
+	std::string name;
+
   public:
 	/* Default constructor */
 	DiamondTrap();
@@ -31,9 +31,11 @@ class DiamondTrap : public ScavTrap, public FragTrap
 	/* Destructor */
 	~DiamondTrap();
 
-	/* Member functions */
-    void whoAmI();
-};
+	/* Assignation operator */
+	DiamondTrap &operator=(const DiamondTrap &src);
 
+	/* Member functions */
+	void whoAmI();
+};
 
 #endif

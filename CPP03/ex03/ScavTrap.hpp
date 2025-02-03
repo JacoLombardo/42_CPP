@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 10:38:05 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/30 15:12:13 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:36:45 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 class ScavTrap : virtual public ClapTrap
 {
   private:
-	bool gateKeeperMode;
 
   public:
 	/* Default constructor */
