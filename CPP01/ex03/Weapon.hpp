@@ -6,12 +6,12 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 10:45:29 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/28 12:05:48 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/03 10:37:36 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_H
-# define WEAPON_H
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
 # include <iostream>
 

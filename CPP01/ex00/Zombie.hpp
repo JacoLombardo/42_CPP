@@ -6,12 +6,12 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 13:38:48 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/28 11:04:57 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/03 10:37:53 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
 # include <iostream>
 
