@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 10:45:29 by jalombar          #+#    #+#             */
-/*   Updated: 2025/02/03 10:37:36 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/03 15:03:09 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 
 class Weapon
 {
-    private:
-        std::string weapon;
+  private:
+	std::string weapon;
 
-    public:
-        Weapon() : weapon("Axe") {}
-        Weapon(const std::string& firstWeapon) : weapon(firstWeapon) {}
-        const std::string getType() const;
-        void setType(const std::string& newWeapon);
+  public:
+	Weapon();
+	Weapon(const std::string &firstWeapon);
+	const std::string getType() const;
+	void setType(const std::string &newWeapon);
 };
 
 #endif

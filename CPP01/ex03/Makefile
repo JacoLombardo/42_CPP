@@ -6,13 +6,14 @@
 #    By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/17 13:48:12 by jalombar          #+#    #+#              #
-#    Updated: 2025/01/28 13:44:26 by jalombar         ###   ########.fr        #
+#    Updated: 2025/02/03 15:04:05 by jalombar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++   
 FLAGS = -Wall -Werror -Wextra -std=c++98
-SRCS = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+CLASSES = HumanA.cpp HumanB.cpp Weapon.cpp
+SRCS = main.cpp $(CLASSES)
 HEADER = Weapon.hpp HumanA.hpp HumanB.hpp
 NAME = violence
 

@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 13:38:48 by jalombar          #+#    #+#             */
-/*   Updated: 2025/02/03 10:37:46 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/03 14:22:49 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Zombie
         Zombie(std::string name) : name(name) {}
         ~Zombie();
         void setName(const std::string zombieName);
-        void announce() const;
+        void announce();
 };
 
 Zombie* zombieHorde(int N, std::string name);
