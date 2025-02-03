@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mapb.hpp                                           :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/05 13:38:48 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/28 10:46:48 by jalombar         ###   ########.fr       */
+/*   Created: 2025/02/03 10:11:50 by jalombar          #+#    #+#             */
+/*   Updated: 2025/02/03 10:13:08 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAPB_H
-# define MAPB_H
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
 # include <iostream>
 # include <iomanip>
@@ -27,20 +27,6 @@ class Contact
         std::string darkestSecret;
         
         Contact() : id(0) {};
-};
-
-class PhoneBook
-{
-    public:
-        Contact contacts[8];
-
-        void addContact(Contact x)
-        {
-            int index;
-
-            index = (x.id - 1) % 8;
-            contacts[index] = x;
-        }
 };
 
 #endif

@@ -6,13 +6,14 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 12:22:39 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/28 10:51:55 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/03 10:24:55 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mapb.hpp"
+#include "Contact.hpp"
+#include "PhoneBook.hpp"
 
-void ft_add(PhoneBook& phonebook, int& id)
+void ft_add(PhoneBook &phonebook, int &id)
 {
     
     char buffer[500];
@@ -40,7 +41,7 @@ void ft_add(PhoneBook& phonebook, int& id)
     std::cout << std::endl;
 }
 
-void ft_first_10(std::string str)
+void ft_first_10(std::string &str)
 {
     int i;
 
@@ -57,7 +58,7 @@ void ft_first_10(std::string str)
     }
 }
 
-void ft_print_list(Contact x, int index)
+void ft_print_list(Contact &x, int index)
 {
     std::cout << std::setw(10) << index << "|";
     ft_first_10(x.firstName);
@@ -68,7 +69,7 @@ void ft_print_list(Contact x, int index)
     std::cout << std::endl;
 }
 
-void ft_print_contact(Contact x)
+void ft_print_contact(Contact &x)
 {
     std::cout << std::endl;
     std::cout << "First Name: " << x.firstName << std::endl;
@@ -79,7 +80,7 @@ void ft_print_contact(Contact x)
     std::cout << std::endl;
 }
 
-void ft_search(PhoneBook phonebook)
+void ft_search(PhoneBook &phonebook)
 {
     int i;
     int index;
@@ -98,8 +99,9 @@ void ft_search(PhoneBook phonebook)
     while (1)
     {
         std::cout << "Enter the index of the contact you want to select: ";
-        std::cin >> index;
-        if ((index >= 0 && index <= 7) && phonebook.contacts[index].id != 0)
+        if (!(std::cin >> index))
+            std::cin.clear();
+        else if ((index >= 0 && index <= 7) && phonebook.contacts[index].id != 0)
         {
             ft_print_contact(phonebook.contacts[index]);
             break ;

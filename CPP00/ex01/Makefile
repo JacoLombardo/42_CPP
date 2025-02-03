@@ -6,14 +6,14 @@
 #    By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/17 13:48:12 by jalombar          #+#    #+#              #
-#    Updated: 2024/12/05 15:35:25 by jalombar         ###   ########.fr        #
+#    Updated: 2025/02/03 10:14:25 by jalombar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++   
 FLAGS = -Wall -Werror -Wextra -std=c++98
 SRCS = mapb.cpp
-HEADER = mapb.hpp
+HEADER = Contact.hpp PhoneBook.hpp
 NAME = mapb
 
 all: $(NAME)
