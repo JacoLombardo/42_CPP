@@ -6,11 +6,19 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 12:14:16 by jalombar          #+#    #+#             */
-/*   Updated: 2025/02/03 15:58:03 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:08:11 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
+
+Harl::Harl()
+{
+    functionMap["debug"] = &Harl::debug;
+    functionMap["info"] = &Harl::info;
+    functionMap["warning"] = &Harl::warning;
+    functionMap["error"] = &Harl::error;
+}
 
 void Harl::debug(void) 
 {
@@ -30,14 +38,6 @@ void Harl::warning(void)
 void Harl::error(void) 
 {
     std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
-}
-
-Harl::Harl()
-{
-    functionMap["debug"] = &Harl::debug;
-    functionMap["info"] = &Harl::info;
-    functionMap["warning"] = &Harl::warning;
-    functionMap["error"] = &Harl::error;
 }
 
 void Harl::complain(std::string level)
