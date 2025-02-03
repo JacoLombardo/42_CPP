@@ -6,11 +6,13 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 13:46:20 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/28 14:11:50 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:07:25 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
+
+Harl::Harl(){};
 
 void Harl::debug(void) 
 {

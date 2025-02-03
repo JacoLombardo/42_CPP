@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 10:19:38 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/28 14:07:33 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:05:44 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main(int argc, char **argv)
         if (ft_accepted(str))
             newHarl.filter(str);
         else
-            std::cout << "Invalid argument" << std::endl;
+            std::cout << "Harl does not complain about that" << std::endl;
     }
     else if (argc > 2)
         std::cout << "Too many arguments" << std::endl;
