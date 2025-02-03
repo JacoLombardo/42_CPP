@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 12:11:52 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/17 14:04:17 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:20:53 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ Fixed::~Fixed()
 }
 
 /* Copy constructor */
-
 Fixed::Fixed(const Fixed &other)
 {
     std::cout << "Copy constructor called" << std::endl;
@@ -35,7 +34,6 @@ Fixed::Fixed(const Fixed &other)
 }
 
 /* Copy assignment operator */
-
 Fixed &Fixed::operator=(const Fixed &other)
 {
     std::cout << "Copy assignment operator called" << std::endl;

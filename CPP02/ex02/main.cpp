@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 12:37:40 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/29 10:58:24 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:22:10 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int main(void)
     std::cout << a << std::endl;
     std::cout << b << std::endl;
     std::cout << Fixed::max(a, b) << std::endl;
+    std::cout << Fixed::min(a, b) << std::endl;
     return 0;
 }

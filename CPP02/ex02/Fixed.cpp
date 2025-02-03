@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 12:11:52 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/29 12:36:44 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:21:39 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,34 +19,29 @@ Fixed::Fixed() : number(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
-
 /* Destructor */
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
 }
-
 /* Int constructor */
 Fixed::Fixed(const int value)
 {
 	std::cout << "Int constructor called" << std::endl;
 	number = value * (1 << fractionalBits);
 }
-
 /* Float constructor */
 Fixed::Fixed(const float value)
 {
 	std::cout << "Float constructor called" << std::endl;
 	number = int(roundf(value * (1 << fractionalBits)));
 }
-
 /* Copy constructor */
 Fixed::Fixed(const Fixed &other)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
-
 /* Copy assignment operator */
 Fixed &Fixed::operator=(const Fixed &other)
 {
