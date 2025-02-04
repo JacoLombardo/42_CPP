@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 13:09:33 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/31 13:38:57 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/04 14:01:12 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ class Brain
     public:
         Brain();
         ~Brain();
+        Brain(const Brain &other);
+	    Brain &operator=(const Brain &other);
 
         void addIdea(std::string new_idea);
 };

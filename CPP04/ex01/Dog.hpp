@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 10:27:09 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/31 14:04:45 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/04 13:47:17 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,8 @@ class Dog : public Animal
         Dog();
         Dog(std::string type);
         ~Dog();
-        /* Copy constructor */
         Dog(const Dog &other);
-        /* Copy assignment operator */
-        Dog& operator=(const Dog& other);
+	    Dog &operator=(const Dog &other);
 
         void makeSound() const;
 };
