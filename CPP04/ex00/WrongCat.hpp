@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 10:26:53 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/31 12:28:46 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/04 13:27:59 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ class WrongCat : public WrongAnimal
         WrongCat();
         WrongCat(std::string type);
         ~WrongCat();
-        
+        WrongCat(const WrongCat &other);
+	    WrongCat &operator=(const WrongCat &other);
+    
         void makeSound() const;
 };
 

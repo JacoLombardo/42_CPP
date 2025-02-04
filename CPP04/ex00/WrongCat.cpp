@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 10:26:56 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/31 12:17:42 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/04 13:29:39 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,17 @@ WrongCat::WrongCat(std::string type) : WrongAnimal(type)
 WrongCat::~WrongCat()
 {
     std::cout << "[WrongCat] " << type << " was destroyed!" << std::endl;
+}
+WrongCat::WrongCat(const WrongCat &other) : WrongAnimal(other)
+{
+	std::cout << "[WrongCat] Copy constructor for type " << type << " was called!" << std::endl;
+}
+WrongCat &WrongCat::operator=(const WrongCat &other)
+{
+	if (this != &other)
+		type = other.type;
+	std::cout << "[WrongCat] Copy assignment operator for type " << type << " was created!" << std::endl;
+    return (*this);
 }
 
 void WrongCat::makeSound() const

@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 10:25:52 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/31 12:28:49 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/04 13:18:59 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class Animal
         Animal();
         Animal(std::string type);
         virtual ~Animal();
+        Animal(const Animal &other);
+	    Animal &operator=(const Animal &other);
 
         virtual void makeSound() const;
         std::string getType() const;

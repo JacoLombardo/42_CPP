@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/31 10:27:09 by jalombar          #+#    #+#             */
-/*   Updated: 2025/02/04 13:26:12 by jalombar         ###   ########.fr       */
+/*   Created: 2025/02/04 11:36:44 by jalombar          #+#    #+#             */
+/*   Updated: 2025/02/04 11:37:58 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#include "Cure.hpp"
 
-# include <iostream>
-# include "Animal.hpp"
-
-class Dog : public Animal
+Cure::Cure() : AMateria("cure")
 {
-    private:
-    
-    public:
-        Dog();
-        Dog(std::string type);
-        ~Dog();
-        Dog(const Dog &other);
-	    Dog &operator=(const Dog &other);
+    std::cout << "Cure was created!" << std::endl;
+}
 
-        void makeSound() const;
+AMateria *Cure::clone()
+{
+    AMateria *clone = new Cure();
+    return (clone);
 };
-
-#endif
+void use(ICharacter &target)
+{
+    std::cout << "* heals " << target.name << "’s wounds *" << std::endl;
+}

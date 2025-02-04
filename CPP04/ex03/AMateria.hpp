@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/31 10:27:09 by jalombar          #+#    #+#             */
-/*   Updated: 2025/02/04 13:26:12 by jalombar         ###   ########.fr       */
+/*   Created: 2025/02/04 10:42:45 by jalombar          #+#    #+#             */
+/*   Updated: 2025/02/04 11:03:54 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
 # include <iostream>
-# include "Animal.hpp"
+# include "ICharacter.hpp"
 
-class Dog : public Animal
+class AMateria
 {
-    private:
-    
-    public:
-        Dog();
-        Dog(std::string type);
-        ~Dog();
-        Dog(const Dog &other);
-	    Dog &operator=(const Dog &other);
+  protected:
+    std::string type;
 
-        void makeSound() const;
+  public:
+	AMateria(std::string const &type);
+
+	std::string const &getType() const;
+
+	virtual AMateria *clone() = 0;
+	virtual void use(ICharacter &target);
 };
 
 #endif

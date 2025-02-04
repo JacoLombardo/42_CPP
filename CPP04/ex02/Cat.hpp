@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 10:27:04 by jalombar          #+#    #+#             */
-/*   Updated: 2025/02/03 10:57:54 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/04 14:07:11 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,10 @@ class Cat : public AAnimal
         Cat();
         Cat(std::string type);
         ~Cat();
-        /* Copy constructor */
         Cat(const Cat &other);
-        /* Copy assignment operator */
-        Cat& operator=(const Cat& other);
+	    Cat &operator=(const Cat &other);
         
-        void makeSound() const;
+        void makeSound();
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 10:27:11 by jalombar          #+#    #+#             */
-/*   Updated: 2025/02/03 10:58:03 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/04 14:07:45 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,24 +27,19 @@ Dog::~Dog()
     delete brain;
     std::cout << "[Dog] " << type << " was destroyed!" << std::endl;
 }
-
-/* Copy constructor */
-Dog::Dog(const Dog &other)
+Dog::Dog(const Dog &other) : AAnimal(other)
 {
-	std::cout << "[Dog] " << type << " was created!" << std::endl;
-	type = other.type;
+	std::cout << "[Dog] Copy constructor for type " << type << " was called!" << std::endl;
 }
-
-/* Copy assignment operator */
 Dog &Dog::operator=(const Dog &other)
 {
-    std::cout << "[Dog] " << type << " has called copy assignment operator!" << std::endl;
 	if (this != &other)
-		type= other.type;
-	return (*this);
+		type = other.type;
+	std::cout << "[Dog] Copy assignment operator for type " << type << " was created!" << std::endl;
+    return (*this);
 }
 
-void Dog::makeSound() const
+void Dog::makeSound()
 {
     std::cout << "[Dog] " << type << " is yelping!" << std::endl;
 }

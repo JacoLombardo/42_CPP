@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 10:26:58 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/31 12:28:42 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/04 13:26:32 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class WrongAnimal
         WrongAnimal();
         WrongAnimal(std::string type);
         virtual ~WrongAnimal();
+        WrongAnimal(const WrongAnimal &other);
+	    WrongAnimal &operator=(const WrongAnimal &other);
 
         virtual void makeSound() const;
         std::string getType() const;

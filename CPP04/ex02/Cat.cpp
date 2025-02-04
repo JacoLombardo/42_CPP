@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 10:27:06 by jalombar          #+#    #+#             */
-/*   Updated: 2025/02/03 10:57:46 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/04 14:07:19 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,24 +27,19 @@ Cat::~Cat()
     delete brain;
     std::cout << "[Cat] " << type << " was destroyed!" << std::endl;
 }
-
-/* Copy constructor */
-Cat::Cat(const Cat &other)
+Cat::Cat(const Cat &other) : AAnimal(other)
 {
-	std::cout << "[Cat] " << type << " was created!" << std::endl;
-	type = other.type;
+	std::cout << "[Cat] Copy constructor for type " << type << " was called!" << std::endl;
 }
-
-/* Copy assignment operator */
 Cat &Cat::operator=(const Cat &other)
 {
-    std::cout << "[Cat] " << type << " has called copy assignment operator!" << std::endl;
 	if (this != &other)
-		type= other.type;
-	return (*this);
+		type = other.type;
+	std::cout << "[Cat] Copy assignment operator for type " << type << " was created!" << std::endl;
+    return (*this);
 }
 
-void Cat::makeSound() const
+void Cat::makeSound()
 {
     std::cout << "[Cat] " << type << " is purring!" << std::endl;
 }

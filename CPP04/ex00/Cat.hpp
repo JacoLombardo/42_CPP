@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 10:27:04 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/31 12:28:36 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/04 13:25:18 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class Cat : public Animal
         Cat();
         Cat(std::string type);
         ~Cat();
+        Cat(const Cat &other);
+	    Cat &operator=(const Cat &other);
         
         void makeSound() const;
 };

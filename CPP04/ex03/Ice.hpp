@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/31 10:27:09 by jalombar          #+#    #+#             */
-/*   Updated: 2025/02/04 13:26:12 by jalombar         ###   ########.fr       */
+/*   Created: 2025/02/04 11:04:18 by jalombar          #+#    #+#             */
+/*   Updated: 2025/02/04 11:07:51 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef ICE_HPP
+# define ICE_HPP
 
 # include <iostream>
-# include "Animal.hpp"
+# include "AMateria.hpp"
+# include "ICharacter.hpp"
 
-class Dog : public Animal
+class Ice : public AMateria
 {
-    private:
-    
-    public:
-        Dog();
-        Dog(std::string type);
-        ~Dog();
-        Dog(const Dog &other);
-	    Dog &operator=(const Dog &other);
+  protected:
 
-        void makeSound() const;
+  public:
+	Ice();
+
+	std::string const &getType() const;
+
+	AMateria *clone();
+	void use(ICharacter &target);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 10:25:35 by jalombar          #+#    #+#             */
-/*   Updated: 2025/02/03 10:57:02 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/04 14:06:46 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,16 @@ AAnimal::~AAnimal()
 {
 	std::cout << "[AAnimal] " << type << " was destroyed!" << std::endl;
 }
-
-void	AAnimal::makeSound(void) const
+AAnimal::AAnimal(const AAnimal &other) : type(other.type)
 {
-	std::cout << "[AAnimal] " << type << " is making animal sounds!" << std::endl;
+	std::cout << "[AAnimal] Copy constructor for type " << type << " was called!" << std::endl;
+}
+AAnimal &AAnimal::operator=(const AAnimal &other)
+{
+	if (this != &other)
+		type = other.type;
+	std::cout << "[AAnimal] Copy assignment operator for type " << type << " was created!" << std::endl;
+	return (*this);
 }
 
 std::string AAnimal::getType() const
