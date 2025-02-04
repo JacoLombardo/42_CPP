@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 10:37:56 by jalombar          #+#    #+#             */
-/*   Updated: 2025/02/03 16:36:58 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/04 10:23:47 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	hitPoints = 100;
 	energyPoints = 50;
 	attackDamage = 20;
-	std::cout << "ScavTrap name constructor called" << std::endl;
+	std::cout << "ScavTrap " << name << " was created!" << std::endl;
 }
 
 /* Default destructor */
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap destructor called" << std::endl;
+	std::cout << "ScavTrap " << name << " was destroyed!" << std::endl;
 }
 
 /* Member functions */

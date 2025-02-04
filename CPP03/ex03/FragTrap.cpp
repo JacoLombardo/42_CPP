@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 11:53:23 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/31 09:55:29 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/04 10:23:43 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	hitPoints = 100;
 	energyPoints = 100;
 	attackDamage = 30;
-	std::cout << "FragTrap name constructor called" << std::endl;
+	std::cout << "FragTrap " << name << " was created!" << std::endl;
 }
 
 /* Default destructor */
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap destructor called" << std::endl;
+	std::cout << "FragTrap " << name << " was destroyed!" << std::endl;
 }
 
 /* Member functions */

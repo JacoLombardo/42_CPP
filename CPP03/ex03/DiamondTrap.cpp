@@ -6,16 +6,16 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 12:05:25 by jalombar          #+#    #+#             */
-/*   Updated: 2025/02/03 16:48:18 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/04 10:19:04 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
 /* Default constructor */
-DiamondTrap::DiamondTrap() : ClapTrap("Guido_clap_name"), ScavTrap(), FragTrap()
+DiamondTrap::DiamondTrap() : ClapTrap("Unnamed_clap_name"), ScavTrap(), FragTrap()
 {
-	name = "Guido";
+	name = "Unnamed";
 	hitPoints = FragTrap::hitPoints;
 	energyPoints = ScavTrap::energyPoints;
 	attackDamage = FragTrap::attackDamage;
@@ -28,19 +28,19 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), Scav
 	hitPoints = FragTrap::hitPoints;
 	energyPoints = ScavTrap::energyPoints;
 	attackDamage = FragTrap::attackDamage;
-	std::cout << "DiamondTrap name constructor called" << std::endl;
+	std::cout << "DiamondTrap " << name << " was created!" << std::endl;
 }
 /* Default destructor */
 DiamondTrap::~DiamondTrap()
 {
-	std::cout << "DiamondTrap destructor called" << std::endl;
+	std::cout << "DiamondTrap " << name << " was destroyed!" << std::endl;
 }
 
 /* Assignation operator */
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
 {
 	std::cout << "DiamondTrap Assignation operator called" << std::endl;
-	name = other.name + "_clap_trap";
+	name = other.name;
 	hitPoints = other.hitPoints;
 	energyPoints = other.energyPoints;
 	attackDamage = other.attackDamage;
@@ -48,6 +48,11 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
 }
 
 /* Member functions */
+void DiamondTrap::attack(const std::string &target)
+{
+	ScavTrap::attack(target);
+}
+
 void DiamondTrap::whoAmI()
 {
 	if (hitPoints > 0)

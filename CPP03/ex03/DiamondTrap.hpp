@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 12:05:37 by jalombar          #+#    #+#             */
-/*   Updated: 2025/02/03 16:48:45 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/04 10:19:07 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 	DiamondTrap &operator=(const DiamondTrap &src);
 
 	/* Member functions */
+	void attack(const std::string &target);
 	void whoAmI();
 };
 
