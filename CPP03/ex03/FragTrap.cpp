@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 11:53:23 by jalombar          #+#    #+#             */
-/*   Updated: 2025/02/04 10:23:43 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/04 11:59:23 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ FragTrap::FragTrap() : ClapTrap()
 	attackDamage = 30;
 	std::cout << "FragTrap default constructor called" << std::endl;
 }
-
 /* Name constructor */
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
@@ -29,11 +28,22 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	attackDamage = 30;
 	std::cout << "FragTrap " << name << " was created!" << std::endl;
 }
-
-/* Default destructor */
+/* Destructor */
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap " << name << " was destroyed!" << std::endl;
+}
+/* Copy Constructor */
+FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other)
+{
+    std::cout << "FragTrap copy constructor called!" << std::endl;
+}
+/* Copy Assignment Operator */
+FragTrap& FragTrap::operator=(const FragTrap& other) {
+    if (this != &other)
+        ClapTrap::operator=(other);
+    std::cout << "FragTrap assignment operator called!" << std::endl;
+    return *this;
 }
 
 /* Member functions */

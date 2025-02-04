@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 12:05:25 by jalombar          #+#    #+#             */
-/*   Updated: 2025/02/04 10:19:04 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/04 12:30:13 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,25 @@ DiamondTrap::~DiamondTrap()
 {
 	std::cout << "DiamondTrap " << name << " was destroyed!" << std::endl;
 }
-
-/* Assignation operator */
-DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
+/* Copy Constructor */
+DiamondTrap::DiamondTrap(const DiamondTrap& other)
+    : ClapTrap(other), ScavTrap(other), FragTrap(other), name(other.name)
 {
-	std::cout << "DiamondTrap Assignation operator called" << std::endl;
-	name = other.name;
-	hitPoints = other.hitPoints;
-	energyPoints = other.energyPoints;
-	attackDamage = other.attackDamage;
-	return (*this);
+    std::cout << "DiamondTrap copy constructor called!" << std::endl;
+}
+
+/* Copy Assignment Operator */
+DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other)
+{
+    if (this != &other)
+	{
+        ClapTrap::operator=(other);
+        FragTrap::operator=(other);
+        ScavTrap::operator=(other);
+        name = other.name;
+    }
+    std::cout << "DiamondTrap assignment operator called!" << std::endl;
+    return (*this);
 }
 
 /* Member functions */

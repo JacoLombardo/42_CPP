@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 10:37:56 by jalombar          #+#    #+#             */
-/*   Updated: 2025/02/03 16:37:10 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/04 11:58:20 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,23 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	attackDamage = 20;
 	std::cout << "ScavTrap name constructor called" << std::endl;
 }
-
 /* Default destructor */
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap destructor called" << std::endl;
+}
+/* Copy Constructor */
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
+{
+    std::cout << "ScavTrap copy constructor called!" << std::endl;
+}
+/* Copy Assignment Operator */
+ScavTrap& ScavTrap::operator=(const ScavTrap& other)
+{
+    if (this != &other)
+        ClapTrap::operator=(other);
+    std::cout << "ScavTrap assignment operator called!" << std::endl;
+    return *this;
 }
 
 /* Member functions */

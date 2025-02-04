@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 11:53:33 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/30 12:00:51 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/04 11:57:22 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ class FragTrap : public ClapTrap
 	FragTrap(std::string name);
 	/* Destructor */
 	~FragTrap();
+	/* Copy constructor */
+	FragTrap(const FragTrap &other);
+	/* Copy assignment operator */
+	FragTrap &operator=(const FragTrap &other);
 
 	/* Member functions */
 	void highFivesGuys(void);
