@@ -1,17 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.cpp                                     :+:      :+:    :+:   */
+/*   messages.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/04 14:15:12 by jalombar          #+#    #+#             */
-/*   Updated: 2025/02/05 14:40:43 by jalombar         ###   ########.fr       */
+/*   Created: 2025/02/05 14:25:00 by jalombar          #+#    #+#             */
+/*   Updated: 2025/02/05 14:29:54 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ICharacter.hpp"
+#pragma once
 
-ICharacter::~ICharacter()
-{
-}
+const bool messages = false;

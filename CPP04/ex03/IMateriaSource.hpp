@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 10:56:14 by jalombar          #+#    #+#             */
-/*   Updated: 2025/02/04 10:56:37 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/05 11:52:09 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@
 class IMateriaSource
 {
   public:
-	virtual ~IMateriaSource()
-	{
-	}
+	virtual ~IMateriaSource();
 	virtual void learnMateria(AMateria *) = 0;
 	virtual AMateria *createMateria(std::string const &type) = 0;
 };
