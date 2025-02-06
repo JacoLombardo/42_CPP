@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 10:59:30 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/29 14:29:55 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/06 13:14:17 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,14 @@ Point::Point(const float x1, const float y1) : x(x1), y(y1)
 Point::Point(const Point &other) : x(other.x), y(other.y)
 {
 	// std::cout << "Point copy constructor called" << std::endl;
+}
+
+/* Copy assignment operator */
+Point &Point::operator=(const Point &other)
+{
+    (void)other;
+	//std::cout << "Copy assignment operator called" << std::endl;
+	return (*this);
 }
 
 /* getXFloat member function */

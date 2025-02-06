@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 10:58:42 by jalombar          #+#    #+#             */
-/*   Updated: 2025/01/29 14:35:13 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/02/06 13:13:16 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class Point
         /* Copy constructor */
         Point(const Point &other);
         /* Copy assignment operator */
-        Point& operator=(const Point& other);
+        Point& operator=(const Point &other);
 
         /* getXFloat member function */
         float getXFloat(void) const;
@@ -43,7 +43,6 @@ class Point
         void    print(void);
 };
 
-//bool bsp(Point const a, Point const b, Point const c, Point const point);
 std::ostream &operator<<(std::ostream &os, const Fixed &object);
 
 #endif
