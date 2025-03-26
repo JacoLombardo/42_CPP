@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 13:09:24 by jalombar          #+#    #+#             */
-/*   Updated: 2025/02/04 14:05:42 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/03/26 12:24:38 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 Brain::Brain()
 {
+	for (int i = 0; i < 100; i++)
+		ideas[i] = "No idea";
     std::cout << "Brain created!" << std::endl;
 }
 Brain::~Brain()
@@ -22,18 +24,16 @@ Brain::~Brain()
 }
 Brain::Brain(const Brain &other)
 {
-    for (int i = 0; !other.ideas[i].empty(); i++)
-    {
-        ideas[i] = other.ideas[i];
-    }
+	for (int i = 0; i < 100; i++)
+    	ideas[i] = other.ideas[i];
 	std::cout << "[Brain] Copy constructor for type was called!" << std::endl;
 }
 Brain &Brain::operator=(const Brain &other)
 {
 	if (this != &other)
     {
-        for (int i = 0; !other.ideas[i].empty(); i++)
-            ideas[i] = other.ideas[i];
+        for (int i = 0; i < 100; i++)
+        	ideas[i] = other.ideas[i];
     }
 	std::cout << "[Brain] Copy assignment operator for type was created!" << std::endl;
 	return (*this);
@@ -42,7 +42,7 @@ Brain &Brain::operator=(const Brain &other)
 void Brain::addIdea(std::string new_idea)
 {
     int i = 0;
-    while (!ideas[i].empty())
+    while (ideas[i] == "No idea")
         i++;
     if (i < 100)
         ideas[i] = new_idea;

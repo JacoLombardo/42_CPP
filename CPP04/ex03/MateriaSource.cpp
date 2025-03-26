@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:19:36 by jalombar          #+#    #+#             */
-/*   Updated: 2025/02/05 15:02:14 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/03/26 13:51:33 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,17 @@
 
 MateriaSource::MateriaSource()
 {
-    for (int i = 0; i < 4; i++)
-    {
-        templates[i] = NULL;
-    }
+	for (int i = 0; i < 4; i++)
+		templates[i] = NULL;
 	if (messages)
-	    std::cout << "[MateriaSource] Default constructor called!" << std::endl;
+		std::cout << "[MateriaSource] Default constructor called!" << std::endl;
 }
 MateriaSource::~MateriaSource()
 {
-    for (int i = 0; i < 4; i++)
-    {
-        delete templates[i];
-    }
+	for (int i = 0; i < 4; i++)
+		delete templates[i];
 	if (messages)
-	    std::cout << "[MateriaSource] Destructor called!" << std::endl;
+		std::cout << "[MateriaSource] Destructor called!" << std::endl;
 }
 MateriaSource::MateriaSource(const MateriaSource &other)
 {
@@ -64,13 +60,17 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other)
 
 void MateriaSource::learnMateria(AMateria *m)
 {
-    int i = 0;
-    while (templates[i])
-        i++;
-    if (i < 4)
-        templates[i] = m;
-    else
-        std::cout << "[MateriaSource] Templates are full!" << std::endl;
+	if (!m)
+		return ;
+	for (int i = 0; i < 4; ++i)
+	{
+		if (!templates[i])
+		{
+			templates[i] = m;
+			return ;
+		}
+	}
+	std::cout << "[MateriaSource] Templates are full!" << std::endl;
 }
 AMateria *MateriaSource::createMateria(std::string const &type)
 {

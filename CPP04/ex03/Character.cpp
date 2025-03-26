@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 09:55:27 by jalombar          #+#    #+#             */
-/*   Updated: 2025/02/05 15:00:06 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/03/26 13:52:37 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,24 @@
 
 Character::Character() : name("Unnamed")
 {
-    for (int i = 0; i < 4; i++)
-    {
-        inventory[i] = NULL;
-    }
+	for (int i = 0; i < 4; i++)
+		inventory[i] = NULL;
 	if (messages)
-	    std::cout << "[Character] Default constructor called!" << std::endl;
+		std::cout << "[Character] Default constructor called!" << std::endl;
 }
 Character::Character(std::string const &name) : name(name)
 {
-    for (int i = 0; i < 4; i++)
-    {
-        inventory[i] = NULL;
-    }
-    if (messages)
-	    std::cout << "[Character] " << name << " was created!" << std::endl;
+	for (int i = 0; i < 4; i++)
+		inventory[i] = NULL;
+	if (messages)
+		std::cout << "[Character] " << name << " was created!" << std::endl;
 }
 Character::~Character()
 {
-    for (int i = 0; i < 4; i++)
-    {
-        delete inventory[i];
-    }
-    if (messages)
-	    std::cout << "[Character] Destructor called!" << std::endl;
+	for (int i = 0; i < 4; i++)
+		delete inventory[i];
+	if (messages)
+		std::cout << "[Character] Destructor called!" << std::endl;
 }
 Character::Character(const Character &other) : name(other.name)
 {
@@ -70,9 +64,9 @@ Character &Character::operator=(const Character &other)
 	return (*this);
 }
 
-AMateria *Character::getInventory()
+AMateria *Character::getInventory(int i)
 {
-    AMateria *temp = inventory[0];
+    AMateria *temp = inventory[i];
     return (temp);
 }
 std::string const &Character::getName() const
@@ -81,13 +75,17 @@ std::string const &Character::getName() const
 }
 void Character::equip(AMateria *m)
 {
-    int i = 0;
-    while (inventory[i])
-        i++;
-    if (i < 4)
-        inventory[i] = m;
-    else
-        std::cout << "[Character] Inventory of " << name << " is full!" << std::endl;
+	if (!m)
+		return ;
+	for (int i = 0; i < 4; ++i)
+	{
+		if (!inventory[i])
+		{
+			inventory[i] = m;
+			return ;
+		}
+	}
+	std::cout << "[Character] Inventory of " << name << " is full!" << std::endl;
 }
 void Character::unequip(int idx)
 {

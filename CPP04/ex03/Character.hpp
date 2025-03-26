@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 09:55:40 by jalombar          #+#    #+#             */
-/*   Updated: 2025/02/05 14:37:50 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/03/26 13:53:24 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Character : public ICharacter
 	Character(const Character &other);
 	Character &operator=(const Character &other);
 
-	AMateria *getInventory();
+	AMateria *getInventory(int i);
 	std::string const &getName() const;
 	void equip(AMateria *m);
 	void unequip(int idx);
