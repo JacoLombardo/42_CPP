@@ -1,0 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/04 11:30:44 by jalombar          #+#    #+#             */
+/*   Updated: 2025/05/04 12:02:38 by jalombar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "iter.hpp"
+
+int main(void) {
+	
+	iter("boh", 4, testFunction<std::string>);
+
+	std::cout << "Testing with string array:" << std::endl;
+	std::string array1[] = {"ciao", "come", "stai", "?"};
+	iter(array1, 4, testFunction<std::string>);
+	std::cout << std::endl;
+
+	std::cout << "Testing with int array:" << std::endl;
+	int array2[] = {1, 2, 3, 4};
+	iter(array2, 4, testFunction<int>);
+	std::cout << std::endl;
+	return (0);
+}
