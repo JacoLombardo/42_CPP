@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:54:18 by jalombar          #+#    #+#             */
-/*   Updated: 2025/04/17 14:24:08 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/04/18 10:13:05 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ std::string	ft_check_int(std::string const &input)
 		trimmed = trimmed.substr(1);
 	}
 	trimmed.erase(0, trimmed.find_first_not_of('0'));
-	if (trimmed.empty())
-		return ("int");
 	if (isNegative)
 	{
 		if (trimmed.length() > int_min.length())
