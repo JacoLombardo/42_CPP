@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 10:32:43 by jalombar          #+#    #+#             */
-/*   Updated: 2025/04/16 13:42:25 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/04/16 14:45:38 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,11 +82,11 @@ void Bureaucrat::signForm(AForm &form) const
 			std::cout << "[Bureaucrat] " << *this << ", signed " << form.getName() << "." << std::endl;
 		}
 		catch (std::exception &e) {
-			std::cout << "[Bureaucrat] " << *this << ", couldn't sign " << form.getName() << " because bureaucrat's " << e.what() << std::endl;
+			std::cerr << "[Bureaucrat] " << *this << ", couldn't sign " << form.getName() << " because bureaucrat's " << e.what() << std::endl;
 		}
 	}
 	else
-		std::cout << "[Bureaucrat] Form already signed." << std::endl;
+		std::cerr << "[Bureaucrat] Form already signed." << std::endl;
 }
 
 void Bureaucrat::executeForm(AForm const &form) const
@@ -95,7 +95,7 @@ void Bureaucrat::executeForm(AForm const &form) const
 		form.execute(*this);
 	}
 	catch (std::exception &e) {
-		std::cout << "[Bureaucrat] " << *this << ", couldn't execute " << form.getName() << " because " << e.what() << std::endl;
+		std::cerr << "[Bureaucrat] " << *this << ", couldn't execute " << form.getName() << " because " << e.what() << std::endl;
 	}
 }
 

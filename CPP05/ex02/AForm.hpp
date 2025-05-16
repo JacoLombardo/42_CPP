@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 12:34:10 by jalombar          #+#    #+#             */
-/*   Updated: 2025/04/16 13:55:01 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/04/16 16:12:52 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class AForm
 	public:
 		AForm();
 		AForm(std::string name, int gradeToSign, int gradeToExecute);
-		~AForm();
+		virtual ~AForm();
 		AForm(const AForm &other);
 		AForm &operator=(const AForm &other);
 

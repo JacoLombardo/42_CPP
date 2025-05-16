@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 10:32:40 by jalombar          #+#    #+#             */
-/*   Updated: 2025/04/15 12:30:10 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/04/16 14:47:11 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main(void)
 		primo = new Bureaucrat;
 	}
 	catch (std::exception &e) {
-		std::cout << "Construction failed: " << e.what() << std::endl;
+		std::cerr << "Construction failed: " << e.what() << std::endl;
 	}
 	if (primo)
 		test(primo, true, true);
@@ -60,7 +60,7 @@ int	main(void)
 		secondo = new Bureaucrat(190);
 	}
 	catch (std::exception &e) {
-		std::cout << "Construction failed: " << e.what() << std::endl;
+		std::cerr << "Construction failed: " << e.what() << std::endl;
 	}
 	if (secondo)
 		test(secondo, true, true);
@@ -74,7 +74,7 @@ int	main(void)
 		terzo = new Bureaucrat(1);
 	}
 	catch (std::exception &e) {
-		std::cout << "Construction failed: " << e.what() << std::endl;
+		std::cerr << "Construction failed: " << e.what() << std::endl;
 	}
 	if (terzo)
 		test(terzo, true, false);
@@ -88,7 +88,7 @@ int	main(void)
 		quarto = new Bureaucrat(150);
 	}
 	catch (std::exception &e) {
-		std::cout << "Construction failed: " << e.what() << std::endl;
+		std::cerr << "Construction failed: " << e.what() << std::endl;
 	}
 	if (quarto)
 		test(quarto, false, true);
@@ -102,7 +102,7 @@ int	main(void)
 		quinto = new Bureaucrat(100);
 	}
 	catch (std::exception &e) {
-		std::cout << "Construction failed: " << e.what() << std::endl;
+		std::cerr << "Construction failed: " << e.what() << std::endl;
 	}
 	if (quinto)
 		test(quinto, true, true);

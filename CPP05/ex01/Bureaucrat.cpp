@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 10:32:43 by jalombar          #+#    #+#             */
-/*   Updated: 2025/04/15 15:02:46 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/04/16 14:46:25 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void Bureaucrat::signForm(Form &form) const
 			std::cout << "[Bureaucrat] " << *this << ", signed " << form.getName() << "." << std::endl;
 		}
 		catch (std::exception &e) {
-			std::cout << "[Bureaucrat] " << *this << ", couldn't sign " << form.getName() << " because bureaucrat's " << e.what() << std::endl;
+			std::cerr << "[Bureaucrat] " << *this << ", couldn't sign " << form.getName() << " because bureaucrat's " << e.what() << std::endl;
 		}
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 10:32:43 by jalombar          #+#    #+#             */
-/*   Updated: 2025/04/15 12:05:14 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/04/15 14:50:48 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Bureaucrat::Bureaucrat() : _name("George"), _grade(50)
 {
-	std::cout << "[Bureaucrat] " << _name << " with grade: " << _grade << " created!" << std::endl;
+	std::cout << "[Bureaucrat] " << _name << ", bureaucrat grade " << _grade << ", created." << std::endl;
 }
 
 Bureaucrat::Bureaucrat(int grade) : _name("Sam")
@@ -25,24 +25,24 @@ Bureaucrat::Bureaucrat(int grade) : _name("Sam")
 		throw Bureaucrat::GradeTooLowException();
 	else
 		_grade = grade;
-	std::cout << "[Bureaucrat] " << _name << " with grade: " << grade << " created!" << std::endl;
+	std::cout << "[Bureaucrat] " << _name << ", bureaucrat grade " << _grade << ", created." << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "[Bureaucrat] " << _name << " destroyed!" << std::endl;
+	std::cout << "[Bureaucrat] " << _name << " destroyed." << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name), _grade(other._grade)
 {
-	std::cout << "[Bureaucrat] Copy constructor for " << _name << " with grade " << _grade << " called!" << std::endl;
+	std::cout << "[Bureaucrat] Copy constructor for " << _name << ", bureaucrat grade " << _grade << ", called." << std::endl;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
 	if (this != &other)
 		_grade = other._grade;
-	std::cout << "[Bureaucrat] Copy assignment operator called!" << std::endl;
+	std::cout << "[Bureaucrat] Copy assignment operator called." << std::endl;
 	return (*this);
 }
 
