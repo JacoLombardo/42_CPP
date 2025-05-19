@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 11:31:00 by jalombar          #+#    #+#             */
-/*   Updated: 2025/05/04 11:47:45 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/05/19 12:01:52 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,13 @@
 
 template <typename T, typename F>
 void iter(T *p1, int p2, F p3) {
-	for (int i = 0; i < p2; i++)
-		p3(p1[i]);
+	if (!p1 || p2 <= 0 || !p3)
+		std::cout << "Invalid parameters" << std::endl;
+	else
+	{
+		for (int i = 0; i < p2; i++)
+			p3(p1[i]);
+	}
 }
 
 template <typename T>

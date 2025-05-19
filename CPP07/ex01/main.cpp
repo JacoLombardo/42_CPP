@@ -6,15 +6,13 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 11:30:44 by jalombar          #+#    #+#             */
-/*   Updated: 2025/05/04 12:02:38 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/05/19 12:12:34 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
 
 int main(void) {
-	
-	iter("boh", 4, testFunction<std::string>);
 
 	std::cout << "Testing with string array:" << std::endl;
 	std::string array1[] = {"ciao", "come", "stai", "?"};
