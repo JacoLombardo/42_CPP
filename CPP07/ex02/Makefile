@@ -13,8 +13,7 @@
 CC = c++   
 FLAGS = -Wall -Werror -Wextra -Wshadow -Wno-shadow
 98 = -std=c++98
-CLASSES = Array.tpp
-SRCS = main.cpp $(CLASSES)
+SRCS = main.cpp
 HEADER = Array.hpp
 NAME = template
 

@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 12:16:08 by jalombar          #+#    #+#             */
-/*   Updated: 2025/05/19 14:26:05 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/05/20 11:47:08 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 
 # include <iostream>
 # include <cstdlib>
+# include <ctime>
+
 template <typename T>
 class Array
 {
 	private:
 		unsigned int _size;
-		T _array[];
+		T *_array;
 
 	public:
 		Array();
@@ -40,6 +42,22 @@ class Array
 				}
 		};
 };
+
+template <typename T>
+void ft_print(Array<T> &array) {
+	for (unsigned int i = 0; i < array.size(); i++)
+		std::cout << array[i] << std::endl;
+}
+
+template <typename T>
+bool ft_compare(Array<T> &arr1, Array<T> &arr2, unsigned int size) {
+    for (unsigned int i = 0; i < size; ++i) {
+        if (arr1[i] != arr2[i]) {
+            return (false);
+        }
+    }
+    return (true);
+}
 
 # include "Array.tpp"
 

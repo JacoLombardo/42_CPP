@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 14:26:18 by jalombar          #+#    #+#             */
-/*   Updated: 2025/05/19 14:26:30 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/05/20 11:23:03 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ template <typename T>
 Array<T>::Array(unsigned int n) : _size(n)
 {
 	_array = new T[n]();
-	for (int i = 0; _array[i]; i++)
-		std::cout << _array[i] << std::endl;
 	std::cout << "[Array] Array of size " << n << " created." << std::endl;
 }
 
@@ -38,8 +36,8 @@ Array<T>::~Array()
 template <typename T>
 Array<T>::Array(const Array &other) : _size(other._size)
 {
-	_array = new T[_size];
-	for (int i = 0; i < _size; i++)
+	_array = new T[_size]();
+	for (unsigned int i = 0; i < _size; i++)
 		_array[i] = other._array[i];
 	std::cout << "[Array] Copy Constructor called." << std::endl;
 }
@@ -51,10 +49,10 @@ Array<T> &Array<T>::operator=(const Array &other)
 		delete[] _array;
 		_size = other._size;
 		_array = new T[_size]();
-		for (int i = 0; i < _size; i++)
+		for (unsigned int i = 0; i < _size; i++)
 			_array[i] = other._array[i];
 	}
-	std::cout << "[Form] Copy assignment operator called." << std::endl;
+	std::cout << "[Array] Copy assignment operator called." << std::endl;
 	return (*this);
 }
 
