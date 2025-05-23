@@ -13,7 +13,13 @@
 #ifndef SCALARCONVERTER_HPP
 #define SCALARCONVERTER_HPP
 
-# include "converter.hpp"
+#include <iostream>
+#include <iomanip>
+#include <limits>
+#include <cmath>
+#include <cstdlib>
+#include <cerrno>
+#include <climits>
 
 class  ScalarConverter
 {
@@ -27,13 +33,6 @@ class  ScalarConverter
 	public:
 		static void convert(std::string const &input);
 
-	class InvalidInputException : public std::exception
-	{
-		public:
-			virtual const char* what() const throw() {
-				return ("The input is invalid!");
-			}
-	};
 };
 
 #endif
