@@ -17,12 +17,6 @@ ScalarConverter::ScalarConverter()
 	std::cout << "[ScalarConverter] Converter created." << std::endl;
 }
 
-ScalarConverter::ScalarConverter(std::string &input)
-{
-	(void)input;
-	std::cout << "[ScalarConverter] Converter created." << std::endl;
-}
-
 ScalarConverter::~ScalarConverter()
 {
 	std::cout << "[ScalarConverter] Converter destroyed." << std::endl;
@@ -51,11 +45,15 @@ static bool ft_is_char(const std::string &input) {
 
 static bool ft_is_float(const std::string &input) {
     if (input == "-inff" || input == "+inff" || input == "nanf")
-        return (true);    
+        return (true);
+	else if (input.empty() || input[input.length() - 1] != 'f')
+		return (false);
     std::string num_part = input.substr(0, input.length() - 1);
+	if (!num_part.empty() && num_part[0] == '.')
+        return (false);
     char* endptr;
     std::strtod(num_part.c_str(), &endptr);
-	if (*endptr == 'f' && *endptr++ == '\0')
+	if (*endptr == '\0')
 		return (true);
 	else
 		return (false);
@@ -64,6 +62,8 @@ static bool ft_is_float(const std::string &input) {
 static bool ft_is_double(const std::string &input) {
 	if (input == "-inf" || input == "+inf" || input == "nan")
         return (true);
+	else if (input.empty() || (!input.empty() && input[0] == '.'))
+        return (false);
 	char* endptr;
     std::strtod(input.c_str(), &endptr);
 	if (*endptr == '\0')
@@ -73,6 +73,8 @@ static bool ft_is_double(const std::string &input) {
 }
 
 static bool ft_is_int(const std::string& input) {
+	if (input.empty())
+        return (false);
     char* endptr;
     long val = std::strtol(input.c_str(), &endptr, 10);
 	if (*endptr == '\0' && val >= INT_MIN && val <= INT_MAX)
@@ -84,16 +86,16 @@ static bool ft_is_int(const std::string& input) {
 void ScalarConverter::convert(const std::string &input) {
     std::cout << std::fixed << std::setprecision(1);
 
-    if (ft_is_char(input)) {
+    if (ft_is_char(input))
+	{
         char c = input[1];
         std::cout << "char: '" << c << '\'' << std::endl
                   << "int: " << static_cast<int>(c) << std::endl
                   << "float: " << static_cast<float>(c) << 'f' << std::endl
                   << "double: " << static_cast<double>(c) << std::endl;
-        return ;
     }
-
-    if (ft_is_int(input)) {
+	else if (ft_is_int(input))
+	{
         long temp = std::strtol(input.c_str(), NULL, 10);
         int i = static_cast<int>(temp);
         if (i < 0 || i > 127)
@@ -105,10 +107,9 @@ void ScalarConverter::convert(const std::string &input) {
         std::cout << "int: " << i << std::endl
                   << "float: " << static_cast<float>(i) << 'f' << std::endl
                   << "double: " << static_cast<double>(i) << std::endl;
-        return ;
     }
-
-    if (ft_is_float(input)) {
+	else if (ft_is_float(input))
+	{
         double temp = std::strtod(input.c_str(), NULL);
         float f = static_cast<float>(temp);
         if (std::isnan(f) || static_cast<int>(f) < 0 || static_cast<int>(f) > 127)
@@ -117,16 +118,15 @@ void ScalarConverter::convert(const std::string &input) {
             std::cout << "char: Non displayable" << std::endl;
         else
             std::cout << "char: '" << static_cast<char>(f) << '\'' << std::endl;
-        if (static_cast<int>(f) < INT_MIN || static_cast<int>(f) > INT_MAX || std::isnan(f))
+        if (std::isnan(f) || std::isinf(f) || static_cast<int>(f) < INT_MIN || static_cast<int>(f) > INT_MAX)
             std::cout << "int: impossible" << std::endl;
         else
             std::cout << "int: " << static_cast<int>(f) << std::endl;
         std::cout << "float: " << f << 'f' << std::endl
                   << "double: " << static_cast<double>(f) << std::endl;
-        return ;
     }
-
-    if (ft_is_double(input)) {
+	else if (ft_is_double(input))
+	{
         double d = std::strtod(input.c_str(), NULL);
         if (std::isnan(d) || static_cast<int>(d) < 0 || static_cast<int>(d) > 127)
             std::cout << "char: impossible" << std::endl;
@@ -134,17 +134,19 @@ void ScalarConverter::convert(const std::string &input) {
             std::cout << "char: Non displayable" << std::endl;
         else
             std::cout << "char: '" << static_cast<char>(d) << '\'' << std::endl;
-        if (static_cast<int>(d) < INT_MIN || static_cast<int>(d) > INT_MAX || std::isnan(d))
+        if (std::isnan(d) || std::isinf(d) || static_cast<int>(d) < INT_MIN || static_cast<int>(d) > INT_MAX)
             std::cout << "int: impossible" << std::endl;
         else
             std::cout << "int: " << static_cast<int>(d) << std::endl;
         std::cout << "float: " << static_cast<float>(d) << 'f' << std::endl
                   << "double: " << d << std::endl;
-        return ;
     }
-
-    std::cout << "char: impossible" << std::endl
-              << "int: impossible" << std::endl
-              << "float: impossible" << std::endl
-              << "double: impossible" << std::endl;
+	else
+	{
+		std::cout << "char: impossible" << std::endl
+			<< "int: impossible" << std::endl
+			<< "float: impossible" << std::endl
+			<< "double: impossible" << std::endl;
+	}
+    
 }

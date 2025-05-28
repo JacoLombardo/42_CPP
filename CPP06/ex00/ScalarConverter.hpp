@@ -13,19 +13,18 @@
 #ifndef SCALARCONVERTER_HPP
 #define SCALARCONVERTER_HPP
 
-#include <iostream>
-#include <iomanip>
-#include <limits>
-#include <cmath>
-#include <cstdlib>
-#include <cerrno>
-#include <climits>
+# include <iostream>
+# include <iomanip>
+# include <limits>
+# include <cmath>
+# include <cstdlib>
+# include <cerrno>
+# include <climits>
 
 class  ScalarConverter
 {
 	private:
 		ScalarConverter();
-		ScalarConverter(std::string &input);
 		~ScalarConverter();
 		ScalarConverter(const ScalarConverter &other);
 		ScalarConverter &operator=(const ScalarConverter &other);
