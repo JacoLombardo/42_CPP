@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 11:16:42 by jalombar          #+#    #+#             */
-/*   Updated: 2025/05/29 13:57:22 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/05/29 14:31:40 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,10 +117,10 @@ int	main(void)
 	{
 		std::cout << std::endl << std::endl << "TEST 6" << std::endl;
 		std::cout << std::endl << "Testing to create a span of size 50000:" << std::endl;
-		Span test3(50000);
+		Span test(50000);
 		std::cout << std::endl << "Testing to fill up the span of size 50000:" << std::endl;
 		try {
-			test3.fillUp();
+			test.fillUp();
 			std::cout << "Container filled!" << std::endl;
 		}
 		catch(const std::exception& e) {
@@ -128,8 +128,33 @@ int	main(void)
 		}
 		std::cout << std::endl << "Testing to get Longest and Shortest span:" << std::endl;
 		try {
-			std::cout << "Longest Span: " << test3.longestSpan() << std::endl;
-			std::cout << "Shortest Span: " << test3.shortestSpan() << std::endl;
+			std::cout << "Longest Span: " << test.longestSpan() << std::endl;
+			std::cout << "Shortest Span: " << test.shortestSpan() << std::endl;
+		}
+		catch(const std::exception& e) {
+			std::cerr << e.what() << std::endl;
+		}
+	}
+
+	{
+		std::cout << std::endl << std::endl << "TEST 7" << std::endl;
+		std::cout << std::endl << "Testing to create a span of size 10:" << std::endl;
+		Span test(10);
+		std::cout << std::endl << "Testing to fill it up with the range of iterators:" << std::endl;
+		try {
+			std::vector<unsigned int> vector;
+			for (size_t i = 0; i < 10; i++)
+				vector.push_back(std::rand());
+			test.addNumbers(vector.begin(), vector.end());
+		}
+		catch(const std::exception& e) {
+			std::cerr << e.what() << std::endl;
+		}
+		test.printAll();
+		std::cout << std::endl << "Testing to get Longest and Shortest span:" << std::endl;
+		try {
+			std::cout << "Longest Span: " << test.longestSpan() << std::endl;
+			std::cout << "Shortest Span: " << test.shortestSpan() << std::endl;
 		}
 		catch(const std::exception& e) {
 			std::cerr << e.what() << std::endl;

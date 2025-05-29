@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 11:18:10 by jalombar          #+#    #+#             */
-/*   Updated: 2025/05/29 14:02:51 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/05/29 14:27:36 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,3 +113,4 @@ unsigned int Span::longestSpan()
 	else
 		throw NotEnoughElementsException();
 }
+
