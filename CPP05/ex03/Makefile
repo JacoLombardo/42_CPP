@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 CC = c++   
-FLAGS = -Wall -Werror -Wextra -Wshadow -Wno-shadow
+FLAGS = -Wall -Werror -Wextra
 98 = -std=c++98
 CLASSES = Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 SRCS = main.cpp $(CLASSES)
