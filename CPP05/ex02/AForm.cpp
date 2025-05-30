@@ -15,7 +15,7 @@
 
 AForm::AForm() : _name("Basic"), _signed(false), _gradeToSign(50), _gradeToExecute(30)
 {
-	std::cout << "[Form] " << _name << ", that needs grade " << _gradeToSign << " to be signed and grade " << _gradeToExecute << " to be executed, created." << std::endl;
+	std::cout << "[AForm] " << _name << ", that needs grade " << _gradeToSign << " to be signed and grade " << _gradeToExecute << " to be executed, created." << std::endl;
 }
 
 AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _signed(false)
@@ -29,17 +29,17 @@ AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : _name(name
 		_gradeToSign = gradeToSign;
 		_gradeToExecute = gradeToExecute;
 	}
-	std::cout << "[Form] " << _name << ", that needs grade " << _gradeToSign << " to be signed and grade " << _gradeToExecute << " to be executed, created." << std::endl;
+	std::cout << "[AForm] " << _name << ", that needs grade " << _gradeToSign << " to be signed and grade " << _gradeToExecute << " to be executed, created." << std::endl;
 }
 
 AForm::~AForm()
 {
-	std::cout << "[Form] " << _name << " destroyed." << std::endl;
+	std::cout << "[AForm] " << _name << " destroyed." << std::endl;
 }
 
 AForm::AForm(const AForm &other) : _name(other._name), _signed(other._signed), _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute)
 {
-	std::cout << "[Form] Copy Constructor for " << _name << ", that needs grade " << _gradeToSign << " to be signed and grade " << _gradeToExecute << " to be executed, called." << std::endl;
+	std::cout << "[AForm] Copy Constructor for " << _name << ", that needs grade " << _gradeToSign << " to be signed and grade " << _gradeToExecute << " to be executed, called." << std::endl;
 }
 
 AForm &AForm::operator=(const AForm &other)
@@ -50,7 +50,7 @@ AForm &AForm::operator=(const AForm &other)
 		_gradeToSign = other._gradeToSign;
 		_gradeToExecute = other._gradeToExecute;
 	}
-	std::cout << "[Form] Copy assignment operator called." << std::endl;
+	std::cout << "[AForm] Copy assignment operator called." << std::endl;
 	return (*this);
 }
 
