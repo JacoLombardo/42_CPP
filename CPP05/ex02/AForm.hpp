@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 12:34:10 by jalombar          #+#    #+#             */
-/*   Updated: 2025/05/16 14:43:59 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/05/30 09:48:27 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class AForm
 	private:
 		const std::string _name;
 		bool _signed;
-		unsigned int _gradeToSign;
-		unsigned int _gradeToExecute;
+		const unsigned int _gradeToSign;
+		const unsigned int _gradeToExecute;
 	
 	public:
 		AForm();

@@ -23,8 +23,8 @@ class Form
 	private:
 		const std::string _name;
 		bool _signed;
-		unsigned int _gradeToSign;
-		unsigned int _gradeToExecute;
+		const unsigned int _gradeToSign;
+		const unsigned int _gradeToExecute;
 	
 	public:
 		Form();
