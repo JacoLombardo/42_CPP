@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 CC = c++   
-FLAGS = -Wall -Werror -Wextra -Wshadow -Wno-shadow
+FLAGS = -Wall -Werror -Wextra
 98 = -std=c++98
 CLASSES = ScalarConverter.cpp
 SRCS = main.cpp $(CLASSES)
