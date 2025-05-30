@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 12:58:02 by jalombar          #+#    #+#             */
-/*   Updated: 2025/05/28 14:10:12 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/05/30 13:23:24 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,19 +56,19 @@ void identify(Base &p)
         A& a = dynamic_cast<A&>(p);
         (void)a;
         std::cout << "A" << std::endl;
-        return;
+        return ;
     } catch (...) {}
     try {
         B& b = dynamic_cast<B&>(p);
         (void)b;
         std::cout << "B" << std::endl;
-        return;
+        return ;
     } catch (...) {}
     try {
         C& c = dynamic_cast<C&>(p);
         (void)c;
         std::cout << "C" << std::endl;
-        return;
+        return ;
     } catch (...) {}
     std::cout << "Error" << std::endl;
 }
