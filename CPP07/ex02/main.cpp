@@ -58,20 +58,16 @@ int	main(int, char **)
 			}
 		}
 		std::cout << std::endl << "Testing for out-of-bounds indexes" << std::endl;
-		try
-		{
+		try {
 			numbers[-2] = 0;
 		}
-		catch (const std::exception &e)
-		{
+		catch (const std::exception &e) {
 			std::cerr << e.what() << std::endl;
 		}
-		try
-		{
+		try {
 			numbers[MAX_VAL] = 0;
 		}
-		catch (const std::exception &e)
-		{
+		catch (const std::exception &e) {
 			std::cerr << e.what() << std::endl;
 		}
 		for (int i = 0; i < MAX_VAL; i++)
