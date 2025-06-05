@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 12:16:08 by jalombar          #+#    #+#             */
-/*   Updated: 2025/05/20 11:47:08 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/06/05 09:19:27 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ void ft_print(Array<T> &array) {
 
 template <typename T>
 bool ft_compare(Array<T> &arr1, Array<T> &arr2, unsigned int size) {
-    for (unsigned int i = 0; i < size; ++i) {
+    for (unsigned int i = 0; i < size; i++)
+	{
         if (arr1[i] != arr2[i]) {
             return (false);
         }
