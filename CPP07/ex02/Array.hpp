@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 12:16:08 by jalombar          #+#    #+#             */
-/*   Updated: 2025/06/05 09:19:27 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/06/05 13:18:08 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Array
 	public:
 		Array();
 		Array(unsigned int n);
-		~Array();
+		~Array(); 
 		Array(const Array &other);
 		Array &operator=(const Array &other);
 
