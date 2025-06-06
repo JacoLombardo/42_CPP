@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 14:35:30 by jalombar          #+#    #+#             */
-/*   Updated: 2025/05/29 16:12:45 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/06/06 09:54:26 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include <stack>
+# include <list>
+# include <iomanip>
 
 template <typename T>
 class MutantStack : public std::stack<T>
