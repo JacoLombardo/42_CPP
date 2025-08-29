@@ -20,6 +20,7 @@
 # include <cstdlib>
 # include <cerrno>
 # include <climits>
+# include <cfloat>
 
 class  ScalarConverter
 {

@@ -39,6 +39,8 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other)
 static bool ft_is_char(const std::string &input) {
 	if (input.length() == 3 && input[0] == '\'' && input[input.length() - 1] == '\'')
     	return (true);
+	else if (input.length() == 1 && !std::isdigit(input[0]))
+		return (true);
 	else
 		return (false);
 }
@@ -53,10 +55,10 @@ static bool ft_is_float(const std::string &input) {
         return (false);
     char* endptr;
     std::strtod(num_part.c_str(), &endptr);
-	if (*endptr == '\0')
-		return (true);
-	else
+	if (*endptr != '\0')
 		return (false);
+	else
+		return (true);
 }
 
 static bool ft_is_double(const std::string &input) {
@@ -66,10 +68,10 @@ static bool ft_is_double(const std::string &input) {
         return (false);
 	char* endptr;
     std::strtod(input.c_str(), &endptr);
-	if (*endptr == '\0')
-		return (true);
-	else
+	if (*endptr != '\0')
 		return (false);
+	else
+		return (true);
 }
 
 static bool ft_is_int(const std::string& input) {
@@ -88,7 +90,11 @@ void ScalarConverter::convert(const std::string &input) {
 
     if (ft_is_char(input))
 	{
-        char c = input[1];
+		char c = '\0';
+		if (input.length() == 3)
+    		c = input[1];
+		else if (input.length() == 1)
+			c = input[0];
         std::cout << "char: '" << c << '\'' << std::endl
                   << "int: " << static_cast<int>(c) << std::endl
                   << "float: " << static_cast<float>(c) << 'f' << std::endl
@@ -122,8 +128,18 @@ void ScalarConverter::convert(const std::string &input) {
             std::cout << "int: impossible" << std::endl;
         else
             std::cout << "int: " << static_cast<int>(f) << std::endl;
-        std::cout << "float: " << f << 'f' << std::endl
-                  << "double: " << static_cast<double>(f) << std::endl;
+		if (temp > FLT_MAX)
+			std::cout << "float: +inff" << std::endl;
+		else if (temp < -FLT_MAX)
+			std::cout << "float: -inff" << std::endl;
+		else
+			std::cout << "float: " << f << 'f' << std::endl;
+        if (temp > DBL_MAX)
+			std::cout << "double: +inf" << std::endl;
+		else if (temp < -DBL_MAX)
+			std::cout << "double: -inf" << std::endl;
+		else
+			std::cout << "double: " << temp << std::endl;
     }
 	else if (ft_is_double(input))
 	{
@@ -138,8 +154,18 @@ void ScalarConverter::convert(const std::string &input) {
             std::cout << "int: impossible" << std::endl;
         else
             std::cout << "int: " << static_cast<int>(d) << std::endl;
-        std::cout << "float: " << static_cast<float>(d) << 'f' << std::endl
-                  << "double: " << d << std::endl;
+		if (static_cast<float>(d) > FLT_MAX)
+			std::cout << "float: +inff" << std::endl;
+		else if (static_cast<float>(d) < -FLT_MAX)
+			std::cout << "float: -inff" << std::endl;
+		else
+			std::cout << "float: " << static_cast<float>(d) << 'f' << std::endl;
+		if (d > DBL_MAX)
+			std::cout << "double: +inf" << std::endl;
+		else if (d < -DBL_MAX)
+			std::cout << "double: -inf" << std::endl;
+		else
+			std::cout << "double: " << d << std::endl;
     }
 	else
 	{
