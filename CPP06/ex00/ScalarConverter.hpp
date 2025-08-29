@@ -1,0 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 09:51:03 by jalombar          #+#    #+#             */
+/*   Updated: 2025/04/17 13:36:44 by jalombar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef SCALARCONVERTER_HPP
+#define SCALARCONVERTER_HPP
+
+# include <iostream>
+# include <iomanip>
+# include <limits>
+# include <cmath>
+# include <cstdlib>
+# include <cerrno>
+# include <climits>
+# include <cfloat>
+
+class  ScalarConverter
+{
+	private:
+		ScalarConverter();
+		~ScalarConverter();
+		ScalarConverter(const ScalarConverter &other);
+		ScalarConverter &operator=(const ScalarConverter &other);
+	
+	public:
+		static void convert(std::string const &input);
+
+};
+
+#endif
