@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 10:16:39 by jalombar          #+#    #+#             */
-/*   Updated: 2025/08/29 10:16:40 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/09/02 10:23:41 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@ BitcoinExchange::BitcoinExchange() {}
 
 BitcoinExchange::~BitcoinExchange() {}
 
-std::string BitcoinExchange::trim(const std::string& str) {
+std::string BitcoinExchange::trim(const std::string &str) {
 	size_t first = str.find_first_not_of(' ');
-	if (first == std::string::npos) return "";
+	if (first == std::string::npos) return ("");
 	size_t last = str.find_last_not_of(' ');
-	return str.substr(first, (last - first + 1));
+	return (str.substr(first, (last - first + 1)));
 }
 
-bool BitcoinExchange::isValidDate(const std::string& date) {
-	if (date.length() != 10) return false;
-	if (date[4] != '-' || date[7] != '-') return false;
+bool BitcoinExchange::isValidDate(const std::string &date) {
+	if (date.length() != 10) return (false);
+	if (date[4] != '-' || date[7] != '-') return (false);
 	
 	// Extract year, month, day
 	std::string yearStr = date.substr(0, 4);
@@ -34,49 +34,49 @@ bool BitcoinExchange::isValidDate(const std::string& date) {
 	
 	// Check if all characters are digits
 	for (size_t i = 0; i < yearStr.length(); ++i)
-		if (!isdigit(yearStr[i])) return false;
+		if (!isdigit(yearStr[i])) return (false);
 	for (size_t i = 0; i < monthStr.length(); ++i)
-		if (!isdigit(monthStr[i])) return false;
+		if (!isdigit(monthStr[i])) return (false);
 	for (size_t i = 0; i < dayStr.length(); ++i)
-		if (!isdigit(dayStr[i])) return false;
+		if (!isdigit(dayStr[i])) return (false);
 	
 	int year = atoi(yearStr.c_str());
 	int month = atoi(monthStr.c_str());
 	int day = atoi(dayStr.c_str());
 	
-	if (year < 1000 || year > 9999) return false;
-	if (month < 1 || month > 12) return false;
-	if (day < 1 || day > 31) return false;
+	if (year < 1900 || year > 9999) return (false);
+	if (month < 1 || month > 12) return (false);
+	if (day < 1 || day > 31) return (false);
 	
 	// Basic month/day validation
-	if (month == 2 && day > 29) return false;
-	if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30) return false;
+	if (month == 2 && day > 29) return (false);
+	if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30) return (false);
 	
-	return true;
+	return (true);
 }
 
-bool BitcoinExchange::isValidValue(const std::string& value) {
-	if (value.empty()) return false;
+bool BitcoinExchange::isValidValue(const std::string &value) {
+	if (value.empty()) return (false);
 	
-	char* endptr;
+	char *endptr;
 	float val = strtod(value.c_str(), &endptr);
 	
-	if (*endptr != '\0') return false;
-	if (val < 0) return false;
-	if (val > 1000) return false;
+	if (*endptr != '\0') return (false);
+	if (val < 0) return (false);
+	if (val > 1000) return (false);
 	
-	return true;
+	return (true);
 }
 
-float BitcoinExchange::stringToFloat(const std::string& str) {
-	return static_cast<float>(atof(str.c_str()));
+float BitcoinExchange::stringToFloat(const std::string &str) {
+	return (static_cast<float>(atof(str.c_str())));
 }
 
-bool BitcoinExchange::loadDatabase(const std::string& filename) {
+bool BitcoinExchange::loadDatabase(const std::string &filename) {
 	std::ifstream file(filename.c_str());
 	if (!file.is_open()) {
 		std::cerr << "Error: could not open database file." << std::endl;
-		return false;
+		return (false);
 	}
 	
 	std::string line;
@@ -100,30 +100,30 @@ bool BitcoinExchange::loadDatabase(const std::string& filename) {
 	}
 	
 	file.close();
-	return true;
+	return (true);
 }
 
-std::string BitcoinExchange::findClosestDate(const std::string& date) {
+std::string BitcoinExchange::findClosestDate(const std::string &date) {
 	std::map<std::string, float>::iterator it = _database.lower_bound(date);
 	
 	if (it == _database.begin()) {
-		if (it->first == date) return date;
-		return ""; // No date found before or equal to the given date
+		if (it->first == date) return (date);
+		return (""); // No date found before or equal to the given date
 	}
 	
 	if (it != _database.end() && it->first == date) {
-		return date; // Exact match found
+		return (date); // Exact match found
 	}
 	
 	--it; // Get the largest date that is less than the given date
-	return it->first;
+	return (it->first);
 }
 
-void BitcoinExchange::processLine(const std::string& line) {
+void BitcoinExchange::processLine(const std::string &line) {
 	size_t pipePos = line.find(" | ");
 	if (pipePos == std::string::npos) {
 		std::cerr << "Error: bad input => " << line << std::endl;
-		return;
+		return ;
 	}
 	
 	std::string date = trim(line.substr(0, pipePos));
@@ -131,7 +131,7 @@ void BitcoinExchange::processLine(const std::string& line) {
 	
 	if (!isValidDate(date)) {
 		std::cerr << "Error: bad input => " << line << std::endl;
-		return;
+		return ;
 	}
 	
 	if (!isValidValue(valueStr)) {
@@ -143,13 +143,13 @@ void BitcoinExchange::processLine(const std::string& line) {
 		} else {
 			std::cerr << "Error: bad input => " << line << std::endl;
 		}
-		return;
+		return ;
 	}
 	
 	std::string closestDate = findClosestDate(date);
 	if (closestDate.empty()) {
 		std::cerr << "Error: no data available for date " << date << std::endl;
-		return;
+		return ;
 	}
 	
 	float value = stringToFloat(valueStr);
@@ -159,11 +159,11 @@ void BitcoinExchange::processLine(const std::string& line) {
 	std::cout << date << " => " << value << " = " << result << std::endl;
 }
 
-void BitcoinExchange::processInputFile(const std::string& filename) {
+void BitcoinExchange::processInputFile(const std::string &filename) {
 	std::ifstream file(filename.c_str());
 	if (!file.is_open()) {
 		std::cerr << "Error: could not open file." << std::endl;
-		return;
+		return ;
 	}
 	
 	std::string line;
@@ -174,7 +174,6 @@ void BitcoinExchange::processInputFile(const std::string& filename) {
 			firstLine = false;
 			continue; // Skip header line
 		}
-		
 		processLine(line);
 	}
 	
