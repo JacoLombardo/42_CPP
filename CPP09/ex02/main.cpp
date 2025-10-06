@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 10:41:54 by jalombar          #+#    #+#             */
-/*   Updated: 2025/10/06 11:06:37 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/10/06 14:51:13 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(int argc, char **argv) {
 	if (argc < 2) {
-		std::cerr << "Error" << std::endl;
+		std::cerr << "Error: not enough arguments" << std::endl;
 		return (1);
 	}
 	try {

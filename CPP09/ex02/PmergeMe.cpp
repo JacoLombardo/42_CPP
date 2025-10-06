@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 11:05:43 by jalombar          #+#    #+#             */
-/*   Updated: 2025/10/06 12:19:32 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/10/06 14:50:26 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ PmergeMe::PmergeMe(char **argv) {
 		std::string s = argv[i];
 		for (size_t j = 0; j < s.size(); j++) {
 			if (!isdigit(s[j]))
-				throw std::runtime_error("Error");
+				throw std::runtime_error("Error: invalid argument");
 		}
 		long n = std::atol(s.c_str());
 		if (n < 0 || n > INT_MAX)
-			throw std::runtime_error("Error");
+			throw std::runtime_error("Error: invalid argument");
 		_vec.push_back(n);
 		_deq.push_back(n);
 	}
