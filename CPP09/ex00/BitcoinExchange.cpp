@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   BitcoinExchagne.cpp                                :+:      :+:    :+:   */
+/*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 10:16:39 by jalombar          #+#    #+#             */
-/*   Updated: 2025/09/02 10:23:41 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/10/06 14:15:13 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
 BitcoinExchange::BitcoinExchange() {}
+
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &other) {
+	_database = other._database;
+}
+
+BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other) {
+	if (this != &other)
+		_database = other._database;
+	return (*this);
+}
 
 BitcoinExchange::~BitcoinExchange() {}
 
@@ -44,7 +54,7 @@ bool BitcoinExchange::isValidDate(const std::string &date) {
 	int month = atoi(monthStr.c_str());
 	int day = atoi(dayStr.c_str());
 	
-	if (year < 1900 || year > 9999) return (false);
+	if (year < 1900 || year > 2100) return (false);
 	if (month < 1 || month > 12) return (false);
 	if (day < 1 || day > 31) return (false);
 	
@@ -54,7 +64,7 @@ bool BitcoinExchange::isValidDate(const std::string &date) {
 	
 	return (true);
 }
-
+// Check if value is int between 0 and 1000
 bool BitcoinExchange::isValidValue(const std::string &value) {
 	if (value.empty()) return (false);
 	
@@ -83,17 +93,20 @@ bool BitcoinExchange::loadDatabase(const std::string &filename) {
 	bool firstLine = true;
 	
 	while (std::getline(file, line)) {
+		// Skip header line
 		if (firstLine) {
 			firstLine = false;
-			continue; // Skip header line
+			continue;
 		}
 		
+		// Extract date and value
 		size_t commaPos = line.find(',');
 		if (commaPos == std::string::npos) continue;
 		
 		std::string date = trim(line.substr(0, commaPos));
 		std::string valueStr = trim(line.substr(commaPos + 1));
 		
+		// Save in container
 		if (isValidDate(date)) {
 			_database[date] = stringToFloat(valueStr);
 		}
@@ -170,9 +183,10 @@ void BitcoinExchange::processInputFile(const std::string &filename) {
 	bool firstLine = true;
 	
 	while (std::getline(file, line)) {
+		// Skip header line
 		if (firstLine) {
 			firstLine = false;
-			continue; // Skip header line
+			continue;
 		}
 		processLine(line);
 	}
