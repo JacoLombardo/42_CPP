@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 10:16:39 by jalombar          #+#    #+#             */
-/*   Updated: 2025/10/06 14:15:13 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/10/07 10:47:05 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ bool BitcoinExchange::isValidDate(const std::string &date) {
 	std::string dayStr = date.substr(8, 2);
 	
 	// Check if all characters are digits
-	for (size_t i = 0; i < yearStr.length(); ++i)
+	for (size_t i = 0; i < yearStr.length(); i++)
 		if (!isdigit(yearStr[i])) return (false);
-	for (size_t i = 0; i < monthStr.length(); ++i)
+	for (size_t i = 0; i < monthStr.length(); i++)
 		if (!isdigit(monthStr[i])) return (false);
-	for (size_t i = 0; i < dayStr.length(); ++i)
+	for (size_t i = 0; i < dayStr.length(); i++)
 		if (!isdigit(dayStr[i])) return (false);
 	
 	int year = atoi(yearStr.c_str());
@@ -117,6 +117,7 @@ bool BitcoinExchange::loadDatabase(const std::string &filename) {
 }
 
 std::string BitcoinExchange::findClosestDate(const std::string &date) {
+	// Find the first date in the database that is not less than the given date
 	std::map<std::string, float>::iterator it = _database.lower_bound(date);
 	
 	if (it == _database.begin()) {
