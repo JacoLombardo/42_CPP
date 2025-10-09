@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 10:41:33 by jalombar          #+#    #+#             */
-/*   Updated: 2025/10/06 11:37:36 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/10/09 09:54:11 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 # include <climits>
 # include <iomanip>
 # include <cstdlib>
+
+// Chose vector and deque because:
+// 		one has contiguous memory (vector);
+// 		the other has segmented memory blocks (non-contiguous).
 
 class PmergeMe {
 	private:

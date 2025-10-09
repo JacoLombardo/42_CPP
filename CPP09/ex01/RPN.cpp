@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 14:11:28 by jalombar          #+#    #+#             */
-/*   Updated: 2025/10/06 14:18:25 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/10/09 09:33:49 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ RPN& RPN::operator=(const RPN &other) {
 
 RPN::~RPN() {}
 
-bool RPN::isOperator(const std::string &token) const {
+bool RPN::isOperator(const std::string &token){
 	return (token == "+" || token == "-" || token == "*" || token == "/");
 }
 
-bool RPN::isValidNumber(const std::string &token) const {
+bool RPN::isValidNumber(const std::string &token){
 	if (token.empty()) return (false);
 	
 	size_t start = 0;
@@ -44,14 +44,13 @@ bool RPN::isValidNumber(const std::string &token) const {
 	return (true);
 }
 
-int RPN::performOperation(int operand2, int operand1, const std::string &op) const {
+int RPN::performOperation(int operand2, int operand1, const std::string &op){
 	if (op == "+") return (operand1 + operand2);
 	if (op == "-") return (operand1 - operand2);
 	if (op == "*") return (operand1 * operand2);
 	if (op == "/") {
-		if (operand2 == 0) {
+		if (operand2 == 0)
 			throw std::runtime_error("Division by zero");
-		}
 		return (operand1 / operand2);
 	}
 	throw std::runtime_error("Unknown operator");

@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 10:17:01 by jalombar          #+#    #+#             */
-/*   Updated: 2025/10/02 14:12:17 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/10/07 10:56:53 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
 	
 	BitcoinExchange btc;
 	
-	// Load the database file (assuming it's named "data.csv")
+	// Load the database file
 	if (!btc.loadDatabase("data.csv"))
 		return (1);
 	

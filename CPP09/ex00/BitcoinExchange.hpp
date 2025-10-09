@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 10:16:45 by jalombar          #+#    #+#             */
-/*   Updated: 2025/10/06 14:14:04 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/10/09 09:30:19 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 #include <cstdlib>
 
 // Chose map for:
-// 		dates sorted automatically
-// 		fast lookup for exact or closest date
+// 		dates sorted automatically,
+// 		fast lookup for exact or closest date.
 
 class BitcoinExchange {
 private:
@@ -39,7 +39,7 @@ public:
 	void processLine(const std::string &line);
 
 	bool isValidDate(const std::string &date);
-	bool isValidValue(const std::string &value);
+	bool isValidValue(const std::string &value, const std::string &line);
 	float stringToFloat(const std::string &str);
 	std::string trim(const std::string &str);
 	std::string findClosestDate(const std::string &date);

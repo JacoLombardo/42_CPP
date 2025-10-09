@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 11:05:43 by jalombar          #+#    #+#             */
-/*   Updated: 2025/10/06 14:50:26 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/10/09 09:41:47 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ static void printVec(const std::vector<int> &v, const std::string &label) {
 
 // Jacobsthal sequence generator
 std::vector<size_t> PmergeMe::genJacobsthal(size_t n) {
+	// J(k+1) = J(k) + 2 × J(k−1)
 	std::vector<size_t> seq;
 	size_t j1 = 1, j2 = 1;
 	while (j2 < n) {

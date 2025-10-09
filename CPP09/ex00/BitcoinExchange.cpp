@@ -6,7 +6,7 @@
 /*   By: jalombar <jalombar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 10:16:39 by jalombar          #+#    #+#             */
-/*   Updated: 2025/10/07 10:47:05 by jalombar         ###   ########.fr       */
+/*   Updated: 2025/10/09 09:18:17 by jalombar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,26 +54,36 @@ bool BitcoinExchange::isValidDate(const std::string &date) {
 	int month = atoi(monthStr.c_str());
 	int day = atoi(dayStr.c_str());
 	
-	if (year < 1900 || year > 2100) return (false);
+	if (year < 1900 || year > 2025) return (false);
 	if (month < 1 || month > 12) return (false);
 	if (day < 1 || day > 31) return (false);
 	
 	// Basic month/day validation
 	if (month == 2 && day > 29) return (false);
+	bool isLeap = ( (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0) );
+	if (!isLeap && (month == 2 && day == 29))
+		return (false);
 	if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30) return (false);
 	
 	return (true);
 }
 // Check if value is int between 0 and 1000
-bool BitcoinExchange::isValidValue(const std::string &value) {
+bool BitcoinExchange::isValidValue(const std::string &value, const std::string &line) {
 	if (value.empty()) return (false);
 	
 	char *endptr;
 	float val = strtod(value.c_str(), &endptr);
-	
-	if (*endptr != '\0') return (false);
-	if (val < 0) return (false);
-	if (val > 1000) return (false);
+
+	if (*endptr != '\0') {
+		std::cerr << "Error: bad input => " << line << std::endl;
+		return (false);
+	} else if (val < 0) {
+		std::cerr << "Error: not a positive number." << std::endl;
+		return (false);
+	} else if (val > 1000) {
+		std::cerr << "Error: too large a number." << std::endl;
+		return (false);
+	}
 	
 	return (true);
 }
@@ -148,17 +158,8 @@ void BitcoinExchange::processLine(const std::string &line) {
 		return ;
 	}
 	
-	if (!isValidValue(valueStr)) {
-		float val = stringToFloat(valueStr);
-		if (val < 0) {
-			std::cerr << "Error: not a positive number." << std::endl;
-		} else if (val > 1000) {
-			std::cerr << "Error: too large a number." << std::endl;
-		} else {
-			std::cerr << "Error: bad input => " << line << std::endl;
-		}
+	if (!isValidValue(valueStr, line))
 		return ;
-	}
 	
 	std::string closestDate = findClosestDate(date);
 	if (closestDate.empty()) {
